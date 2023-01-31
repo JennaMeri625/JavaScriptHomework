@@ -1,4 +1,4 @@
-//complete
+//complete needs 'npm install prompt-sync' package.json
 
 const prompt = require('prompt-sync')();
 
