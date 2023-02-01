@@ -19,7 +19,7 @@ do{
         console.log(`You have $${balance}`);
     }
     if (balance > 0){
-        betAmount = prompt(`How much would you like to bet? `)
+        betAmount = +prompt(`How much would you like to bet? `)
     }else if (balance <= 0){
         console.log(`I'm sorry, you do not have sufficient funds to continue.`);
             process.exit();
@@ -43,20 +43,18 @@ do{
     } else {
 	    console.log(`You lose $${betAmount}!`);
     }
-
-    {function addBet (balance, betAmount) {
-        if (flip === true) {
+    if (flip === true) {
+        function addBet (balance, betAmount) {
             return balance += betAmount;
+            
         }
-    }
         console.log (`Your new balance is: ${addBet (balance , betAmount)}`);
-    }
-    {function subBet (balance, betAmount) {
-        if (flip !== true) {
+    }else if (flip !== true) {
+        function subBet (balance, betAmount) {
             return balance -= betAmount;
-        }   
-    }
-        console.log (`Your new balance is: ${subBet (balance, betAmount)}`);
-    }
+            
+        }  
+        console.log (`Your new balance is: ${subBet (balance, betAmount)}`); 
+    }    
 }
 while(balance > 0);
