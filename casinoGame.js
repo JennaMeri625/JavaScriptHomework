@@ -44,33 +44,17 @@ do{
 
     {function addBet (balance, betAmount) {
         if (flip === true) {
-            return balance += betAmount;
+            return balance + betAmount;
         }
     }
-        console.log addBet(balance += betAmount);
+        console.log (addBet (balance + betAmount));
     }
     {function subBet (balance, betAmount) {
         if (flip !== true) {
-            return balance -= betAmount;
+            return balance - betAmount;
         }   
     }
-        console.log(balance -= betAmount);
+        console.log (subBet (balance - betAmount));
     }
-
-    console.log(balance);
 }
 while(balance > 0);
-
-//  for (let balance = 10; balance >= betAmount; balance++){
-//      function addBet (balance, betAmount){
-//          if (flip === true){
-//              return balance += betAmount;
-//          }
-//          else {
-//              return function subBet (balance, betAmount){
-//                  console.log(balance -= betAmount);
-//               }
-//          }
-//      }
-//  }
-//  console.log (balance);
