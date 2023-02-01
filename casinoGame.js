@@ -15,7 +15,9 @@ do{
 	process.exit();
     }
 
-
+    if (wantsToPlay === "y" || wantsToPlay === "Y") {
+        console.log(`You have $${balance}`);
+    }
     if (balance > 0){
         betAmount = prompt(`How much would you like to bet? `)
     }else if (balance <= 0){
@@ -37,24 +39,24 @@ do{
         const flip = Math.random() < 0.5;
 
         if (flip === true) {
-	    console.log('You win!');
+	    console.log(`You win $${betAmount}!`);
     } else {
-	    console.log('You lose!');
+	    console.log(`You lose $${betAmount}!`);
     }
 
     {function addBet (balance, betAmount) {
         if (flip === true) {
-            return balance + betAmount;
+            return balance += betAmount;
         }
     }
-        console.log (addBet (balance + betAmount));
+        console.log (`Your new balance is: ${addBet (balance , betAmount)}`);
     }
     {function subBet (balance, betAmount) {
         if (flip !== true) {
-            return balance - betAmount;
+            return balance -= betAmount;
         }   
     }
-        console.log (subBet (balance - betAmount));
+        console.log (`Your new balance is: ${subBet (balance, betAmount)}`);
     }
 }
 while(balance > 0);
