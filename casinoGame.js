@@ -3,11 +3,19 @@ const prompt = require('prompt-sync')();
 
 const characterName = prompt(`What is your name? `);
 
+function addBet (balance, betAmount) {
+    return balance += betAmount;
+}
+
+function subBet (balance, betAmount) {
+    return balance -= betAmount;  
+}  
+
 let balance = 10;
 
 let betAmount = 0;
 
-do{
+do {
     wantsToPlay = prompt(`${characterName}, would you like to place a bet? [y/n] `);
 
     if (wantsToPlay === "n" || wantsToPlay === "N") {
@@ -17,9 +25,10 @@ do{
 
     if (wantsToPlay === "y" || wantsToPlay === "Y") {
         console.log(`You have $${balance}`);
-    }
+    } 
+    
     if (balance > 0){
-        betAmount = +prompt(`How much would you like to bet? `)
+        betAmount = +prompt(`How much would you like to bet? `);
     }else if (balance <= 0){
         console.log(`I'm sorry, you do not have sufficient funds to continue.`);
             process.exit();
@@ -33,28 +42,22 @@ do{
 
     do {
 	    bet = prompt("Heads or Tails? [H/T] ");
-    }   
+        }   
         while(bet !== "t" && bet !== "T" && bet !== "h" && bet !== "H");
 
         const flip = Math.random() < 0.5;
 
         if (flip === true) {
 	    console.log(`You win $${betAmount}!`);
-    } else {
+        } else {
 	    console.log(`You lose $${betAmount}!`);
-    }
-    if (flip === true) {
-        function addBet (balance, betAmount) {
-            return balance += betAmount;
-            
         }
-        console.log (`Your new balance is: ${addBet (balance , betAmount)}`);
-    }else if (flip !== true) {
-        function subBet (balance, betAmount) {
-            return balance -= betAmount;
-            
-        }  
-        console.log (`Your new balance is: ${subBet (balance, betAmount)}`); 
-    }    
-}
+        if (flip === true) {
+            balance = addBet (balance, betAmount);
+            console.log (`Your new balance is: $${balance}`);
+        }else if (flip !== true) {
+            balance = subBet(balance, betAmount);
+            console.log (`Your new balance is: $${balance}`); 
+        }    
+    }
 while(balance > 0);
