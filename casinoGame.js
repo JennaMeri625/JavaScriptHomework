@@ -19,7 +19,7 @@ do {
     wantsToPlay = prompt(`${characterName}, would you like to place a bet? [y/n] `);
 
     if (wantsToPlay === "n" || wantsToPlay === "N") {
-	console.log('Ok, more wins for me!');
+	console.log('Ok, see you next!');
 	process.exit();
     }
 
@@ -35,8 +35,10 @@ do {
     }
 
     if (balance<betAmount){
-        prompt(`I'm sorry, you do not have sufficient funds.  Enter another amount. `);
+       do {betAmount = +prompt(`I'm sorry, you do not have sufficient funds.  Enter another amount. `);
     }
+    while (balance<betAmount);
+}
 
     let bet = null;
 
