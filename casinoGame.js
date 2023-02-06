@@ -47,7 +47,8 @@ do {
         }   
         while(bet !== "t" && bet !== "T" && bet !== "h" && bet !== "H");
 
-        const flip = Math.random() < 0.5;
+        function flipCoin() {}
+        const flip = Math.random() < 0.5 ? 'H' : 'T';
 
         if (flip === true) {
 	    console.log(`You win $${betAmount}!`);
