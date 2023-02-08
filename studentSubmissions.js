@@ -5,7 +5,7 @@ const submissions = [
     {name: 'Jill', score: 88, date: '2020-04-22', passed: true},
 ]
 
-console.log(submissions[]);
+
 
             //*****Works!*****
 
