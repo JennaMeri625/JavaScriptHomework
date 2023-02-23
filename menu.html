@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="menu.css">
+
+    <style>
+        /* .menuButton {  */
+        /* background-image: url(bernard-hermant-FiGg-MpiA3o-unsplash.jpg);
+        background-size: cover;
+        position: absolute;
+        right: 0px; */
+          /* background-color: #3498DB;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+        }
+        
+        .menuButton:hover, .menuButton:focus {
+          background-color: #2980B9;
+        }
+        
+        .menu {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .menu-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 160px;
+          overflow: auto;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .menu-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+        
+        .menu a:hover {background-color: #ddd;}
+        
+        .show {display: block;} */
+        </style>
+</head>
+<body>
+    <header>
+    <div class="Menu">
+        <!-- <div class="container" onclick="myFunction(this)"> -->
+            
+          <!-- </div> -->
+          <!-- onclick="myFunction()" -->
+      <button class="menuButton">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </button>
+      <div id="myMenu" class="menu-content">
+        <a href="#letters">Letters</a>
+        <a href="#numbers">Number</a>
+      </div>
+    </div>
+</header>
+    <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    // function myFunction() {
+    //   document.getElementById("myMenu").classList.toggle("show");
+    // }
+    
+    // Close the dropdown if the user clicks outside of it
+    // window.onclick = function(event) {
+    //   if (!event.target.matches('.menuButton')) {
+    //    let dropdowns = document.getElementsByClassName("menu-content");
+    //    let i;
+    //     for (i = 0; i < dropdowns.length; i++) {
+    //      let openDropdown = dropdowns[i];
+    //       if (openDropdown.classList.contains('show')) {
+    //         openDropdown.classList.remove('show');
+    //       }
+    //     }
+    //   }
+    // }
+    </script>
+    
+    </body>
+    </html>
+
+<!-- <body>
+    <header>
+        <div class="menu">
+            <button onclick="myFunction()" class="menuButton">Menu</button>
+            <div id="myMenu" class="menu-content">
+                <a href="#lettersList">Letters</a>
+                <a href="#numbersList">Numbers</a>
+            </div>
+        </div>
+        
+           
+         
+    </header>
+    <main>
+            <div id="lettersList">
+                A B C D E F G H I J K L M 
+                N O P Q R S T U V W X Y Z
+            </div>
+
+            <div id="numbersList">
+                1 2 3 4 5 6 7 8 9 10
+            </div>
+    </main>
+</body>
+    <script src="menu.js"></script>
+</html> 
