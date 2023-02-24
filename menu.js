@@ -1,23 +1,35 @@
 (() => {
-const menuButton = document.querySelector('.menuButton');
-
-
-function myFunction() {
-    event.preventDefault();
-    document.getElementById("myMenu").classList.toggle("show");
-  }
- 
-    window.onclick = function(event) {
-        if (!event.target.matches('.menuButton')) {
-         let dropdowns = document.getElementsByClassName("menu-content");
-         let i;
-          for (i = 0; i < dropdowns.length; i++) {
-           let openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
-          }
+    const menuButton = document.getElementById('menuButton');
+    const menuContent = document.getElementById("menu-content");
+    const letters = document.getElementById("lettersLink");
+    const numbers = document.getElementById("numbersLink");
+    
+    const toggleMenuContent = function () {menuContent.classList.toggle("show");};
+    document.documentElement.addEventListener('click', () => {
+        if (menuContent.classList.contains("show")) {
+            toggleMenuContent();
         }
-    }
- menuButton = document.addEventListener('click',(myFunction)); 
-})();
+    });
+    
+    menuButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+        toggleMenuContent(); 
+    });
+
+    letters.addEventListener('click', (event) => {
+        event.preventDefault();
+        const lettersShow = document.getElementById('letters');
+        const numbersHide = document.getElementById('numbers');
+        lettersShow.style.display = 'block';
+        numbersHide.style.display = 'none';
+    });
+
+    numbers.addEventListener('click', (event) => {
+        event.preventDefault();
+        const numbersShow = document.getElementById('numbers');
+        const lettersHide = document.getElementById('letters');
+        lettersHide.style.display = 'none';
+        numbersShow.style.display = 'block';
+    });
+    
+    })();
